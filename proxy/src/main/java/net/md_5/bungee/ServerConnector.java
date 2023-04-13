@@ -107,6 +107,13 @@ public class ServerConnector extends PacketHandler
         {
             String newHost = copiedHandshake.getHost() + "\00" + AddressUtil.sanitizeAddress( user.getAddress() ) + "\00" + user.getUUID();
 
+            if ( BungeeCord.getInstance().config.isGuardianEnabled() )
+            {
+                newHost = copiedHandshake.getHost().replace( "|", "\00" ) + "\00" + user.getUUID();
+            }
+
+            System.out.println( newHost );
+
             LoginResult profile = user.getPendingConnection().getLoginProfile();
             if ( profile != null && profile.getProperties() != null && profile.getProperties().length > 0 )
             {

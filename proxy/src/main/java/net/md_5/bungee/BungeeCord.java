@@ -290,6 +290,11 @@ public class BungeeCord extends ProxyServer
             getLogger().warning( "MinecraftForge support is currently unmaintained and may have unresolved issues. Please use at your own risk." );
         }
 
+        if ( config.isGuardianEnabled() )
+        {
+            getLogger().log( Level.INFO, "VigilantGuardian support is enabled!" );
+        }
+
         isRunning = true;
 
         pluginManager.enablePlugins();

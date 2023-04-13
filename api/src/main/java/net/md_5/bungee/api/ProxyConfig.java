@@ -110,6 +110,14 @@ public interface ProxyConfig
     @Deprecated
     boolean isIpForward();
 
+
+    /**
+     * Check if VigilantGuard enabled.
+     *
+     * @return guardian enabled
+     */
+    boolean isGuardianEnabled();
+
     /**
      * The encoded favicon.
      *
